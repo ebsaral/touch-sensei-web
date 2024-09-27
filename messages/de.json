@@ -1,0 +1,25 @@
+{
+    "HomePage": {
+      "title": "Hello world German!",
+      "about": "Go to the about page",
+      "gameInfoTitle": "Spiel-Infos",
+      "gameInfo": "Touch Sensei ist im Laufe der Jahre in verschiedene Länder gereist, hat in jedem Land neue Kulturen kennengelernt und die Tiefen der verschiedenen Seelen berührt. Auf jeder Reise begegnete er neuen Emotionen: der Wärme der Liebe, dem Ruck des Schmerzes, dem kalten Atem der Angst, dem Schatten der Sorge, dem Licht des Glücks, dem Glühen des Mutes, der Tiefe der Traurigkeit, der Leichtigkeit des freudigen Aufschwungs, der Frische der Hoffnung und der schweren Dunkelheit der Verzweiflung... Jedes Gefühl schmeckte anders, jede Emotion hatte eine andere Beschaffenheit.\n\nMit der Zeit lernte Sensei, alle seine Sinne zusammenzubringen; als er alles auf einmal fühlen konnte, erkannte er die Magie hinter den Zufällen. Dieses Geheimnis hat er tief in das Spiel eingewoben.\n\nUm Touch Sensei auf seiner geheimen und wahren Reise zu begleiten, musst du das Spiel sorgfältig spielen. Legen Sie Ihren Finger auf den Kreis und bewegen Sie ihn so lange wie möglich. Auf dem Weg deines Fingers bringt dich jedes Detail, das du entdeckst, einen Schritt näher an die geheimen Türen deiner eigenen Sinne.\n\nTouch Sensei ist der perfekte Führer, um dich mit dir selbst und dem Leben in Einklang zu bringen, und wir wünschen dir viel Spaß auf dieser magischen Reise :)"
+    },
+    "NotFoundPage": {
+        "title": "Nicht gefunden"
+    },
+    "Metadata": {
+        "title": "Touch Sensei | handyspiel"
+    },
+    "PrivacyPolicyPage": {
+        "title": "Datenschutzbestimmungen",
+        "text": "pp"
+    },
+    "TermsPage": {
+        "title": "Bedingungen & Konditionen",
+        "text": "xx"
+    },
+    "Link": {
+        "home": "Hauptseite"
+    }
+}

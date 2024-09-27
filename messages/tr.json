@@ -1,0 +1,25 @@
+{
+    "HomePage": {
+      "title": "Hello world Turkce!",
+      "about": "Go to the about page",
+      "gameInfoTitle": "Oyun Hakkında",
+      "gameInfo": "Touch Sensei, yıllar boyu farklı diyarları gezdi, her bir ülkede yeni kültürlere, farklı ruhların derinliklerine dokundu. Her yolculukta yeni duygularla tanıştı: sevginin sıcaklığı, acının sarsıntısı, korkunun soğuk nefesi, endişenin gölgesi, mutluluğun ışığı, cesaretin parıltısı, hüznün derinliği, sevinçle yükselmenin hafifliği, umudun tazeliği ve umutsuzluğun ağır karanlığı… Her hissin tadı başka, her duygunun dokusu farklıydı.\n\nZamanla, Sensei tüm duyularını bir araya getirmeyi öğrendi; her şeyi aynı anda hissedebildiğinde, tesadüflerin arkasındaki büyüyü fark etti. Bulduğu bu sırrı, oyunun derinliklerine işledi.\n\nTouch Sensei’nin gizli ve gerçek yolculuğuna katılmak için, oyunu dikkatle oynamalısınız. Parmağınızı dairenin üzerine yerleştirin ve onunla birlikte en uzun süre boyunca ilerleyin. Parmağınızın izlediği yol boyunca, karşınıza çıkan her detay sizi kendi duyularınızın gizli kapılarına bir adım daha yaklaştıracak.\n\nKendinizle ve hayatla tam anlamıyla senkronize olmanız için mükemmel bir rehber olan Touch Sensei, sizlere bu büyülü yolculukta bol eğlence diliyor. :)"
+    },
+    "NotFoundPage": {
+        "title": "Sayfa bulunamadı"
+    },
+    "Metadata": {
+        "title": "Touch Sensei | mobil oyun"
+    },
+    "PrivacyPolicyPage": {
+        "title": "Gizlilik Politikası",
+        "text": "pp"
+    },
+    "TermsPage": {
+        "title": "Şartlar ve Koşullar",
+        "text": "xx"
+    },
+    "Link": {
+        "home": "Ana Sayfa"
+    }
+}
