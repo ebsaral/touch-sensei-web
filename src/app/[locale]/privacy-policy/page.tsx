@@ -46,10 +46,29 @@ export default function Home({params: {locale}}: {
         {t('PrivacyPolicyPage.title')}
         </div>
     
-        <div className="row-start-3 flex gap-6 text-sm text-center font-[family-name:var(--font-geist-mono)] whitespace-pre-line">
+        <div className="row-start-3 flex gap-6 text-sm text-justify font-[family-name:var(--font-geist-mono)] whitespace-pre-line">
         {t('PrivacyPolicyPage.text')}
+       
         </div>
-
+        <div className="row-start-3 flex gap-6 text-sm text-justify font-[family-name:var(--font-geist-mono)] whitespace-pre-line">
+        <a
+          className="hover:underline hover:underline-offset-4"
+          href="https://www.saral.me"
+          target="_blank"
+        >
+          {"<"}{t("PrivacyPolicyPage.devWebsite")}{">"}
+        </a>
+        
+        {" | "}
+        
+        <a
+          className="hover:underline hover:underline-offset-4"
+          href="https://forms.gle/igsapNH78uHYCbSG7"
+          target="_blank"
+        >
+          {"<"}{t("PrivacyPolicyPage.googleForm")}{">"}
+        </a>
+        </div>
       </main>
       <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
         <Link
