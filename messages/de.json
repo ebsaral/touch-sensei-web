@@ -26,6 +26,7 @@
         "googleForm": "Support-Formular"
     },
     "Link": {
-        "home": "Hauptseite"
+        "home": "Hauptseite",
+        "developer": "Entwickler: Emin Bugra Saral"
     }
 }

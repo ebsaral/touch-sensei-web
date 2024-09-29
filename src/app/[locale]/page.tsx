@@ -117,12 +117,26 @@ export default function Home({params: {locale}}: {
         >
           <Image
             aria-hidden
+            src="https://nextjs.org/icons/file.svg"
+            alt="File icon"
+            width={16}
+            height={16}
+          />
+          {t("TermsPage.title")}
+        </Link>
+        <Link
+          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
+          href="https://www.saral.me"
+          target="_blank"
+        >
+          <Image
+            aria-hidden
             src="https://nextjs.org/icons/window.svg"
             alt="Window icon"
             width={16}
             height={16}
           />
-          {t("TermsPage.title")}
+          {t("Link.developer")}
         </Link>
       </footer>
     </div>
