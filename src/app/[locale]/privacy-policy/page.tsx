@@ -59,8 +59,6 @@ export default function Home({params: {locale}}: {
           {"<"}{t("PrivacyPolicyPage.devWebsite")}{">"}
         </a>
         
-        {" | "}
-        
         <a
           className="hover:underline hover:underline-offset-4"
           href="https://forms.gle/igsapNH78uHYCbSG7"
