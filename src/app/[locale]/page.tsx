@@ -1,6 +1,5 @@
 
 import { useTranslations } from "next-intl";
-import {useFormatter} from 'next-intl';
 import {getTranslations} from 'next-intl/server';
 import { unstable_setRequestLocale } from "next-intl/server";
 import Image from "next/image";
@@ -24,7 +23,6 @@ export default function Home({params: {locale}}: {
 }) {
   unstable_setRequestLocale(locale);
   const t = useTranslations();
-  const format = useFormatter();
 
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
