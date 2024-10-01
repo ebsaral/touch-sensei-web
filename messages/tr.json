@@ -1,6 +1,6 @@
 {
     "HomePage": {
-      "soon": "çok yakında!",
+      "soon": "yakında Google Play Store'da!",
       "title": "Hello world Turkce!",
       "about": "Go to the about page",
       "gameInfoTitle": "Oyun Hakkında",
@@ -27,6 +27,7 @@
     },
     "Link": {
         "home": "Ana Sayfa",
-        "developer": "Geliştirici"
+        "developer": "Geliştirici",
+        "appStoreHref": "https://apps.apple.com/tr/app/touch-sensei/id6705136310"
     }
 }

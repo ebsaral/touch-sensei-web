@@ -1,6 +1,6 @@
 {
     "HomePage": {
-      "soon": "coming soon",
+      "soon": "soon at Google Play Store",
       "title": "Hello world English!",
       "about": "Go to the about page",
       "gameInfoTitle": "Game Info",
@@ -27,6 +27,7 @@
     },
     "Link": {
         "home": "Home Page",
-        "developer": "Developer"
+        "developer": "Developer",
+        "appStoreHref": "https://apps.apple.com/us/app/touch-sensei/id6705136310"
     }
 }
