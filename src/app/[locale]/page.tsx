@@ -8,13 +8,16 @@ import {Link} from '@/i18n/routing';
 
 
 export async function generateMetadata({params: {locale}}: {
-  params: {locale: string};
+  params: {locale: string},
 }) {
   const t = await getTranslations({locale, namespace: 'Metadata'});
  
   return {
     title: t('title'),
-    description: t('description')
+    description: t('description'),
+    appleItunesApp: {
+      appId: "6705136310",
+    }
   };
 }
 
