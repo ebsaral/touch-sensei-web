@@ -17,6 +17,12 @@ export async function generateMetadata({params: {locale}}: {
     description: t('description'),
     itunes: {
       appId: '6705136310',
+    },
+    appLinks: {
+      ios: {
+        url: 'https://touch-sensei.saral.me',
+        app_store_id: '6705136310'
+      },
     }
   };
 }
