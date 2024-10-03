@@ -15,7 +15,9 @@ export async function generateMetadata({params: {locale}}: {
   return {
     title: t('title'),
     description: t('description'),
-    appleItunesApp: "6705136310"
+    itunes: {
+      appId: '6705136310',
+    }
   };
 }
 
