@@ -28,6 +28,10 @@
     "Link": {
         "home": "Home Page",
         "developer": "Developer",
-        "appStoreHref": "https://apps.apple.com/us/app/touch-sensei/id6705136310"
+        "appStoreHref": "https://apps.apple.com/us/app/touch-sensei/id6705136310",
+        "MediumArticle": {
+            "name": "An explanation text from the developer.",
+            "link": "https://saral.blog/touch-sensei-is-live-e97e705e2eec"
+        } 
     }
 }

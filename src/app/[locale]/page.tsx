@@ -102,10 +102,23 @@ export default function Home({params: {locale}}: {
         <div className="row-start-3 flex gap-6 text-sm text-center font-[family-name:var(--font-geist-mono)] whitespace-pre-line">
           {t('HomePage.gameInfo')}
         </div>
-
-        
+        <div className="hover:underline hover:underline-offset-4 row-start-3 flex gap-6 text-sm text-left font-[family-name:var(--font-geist-mono)] whitespace-pre-line">
+        <Image
+              src={`images/link.svg`}
+              alt="Link icon"
+              width={16}
+              height={16}
+              priority
+            />
+          <a href={t("Link.MediumArticle.link")} target="_blank"><b>{t("Link.MediumArticle.name")}</b></a>
+        </div>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
+
+      <div className="row-start-3 flex flex-wrap items-center justify-center">
+        <hr className="h-px w-60 my-8 bg-gray-200 border-0" />
+      </div>
+      
+      <footer className="row-start-4 flex gap-6 flex-wrap items-center justify-center">
         <Link
           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
           href="/privacy-policy"
@@ -148,7 +161,7 @@ export default function Home({params: {locale}}: {
           {t("Link.developer")}
         </Link>
       </footer>
-      <div className="row-start-4 flex flex-wrap items-center justify-center">© {new Date().getFullYear()}</div>
+      <div className="row-start-5 flex flex-wrap items-center justify-center">© {new Date().getFullYear()}</div>
     </div>
   );
 }
