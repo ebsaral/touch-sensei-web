@@ -29,9 +29,8 @@
         "home": "Hauptseite",
         "developer": "Entwickler",
         "appStoreHref": "https://apps.apple.com/de/app/touch-sensei/id6705136310",
-        "MediumArticle": {
-            "name": "Ein Erklärungstext vom Entwickler (Auf Englisch)",
-            "link": "https://saral.blog/touch-sensei-is-live-e97e705e2eec"
+        "DetailsPage": {
+            "name": "Ein Erklärungstext vom Entwickler (Auf Englisch)"
         } 
     }
 }

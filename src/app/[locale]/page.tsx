@@ -110,7 +110,7 @@ export default function Home({params: {locale}}: {
               height={16}
               priority
             />
-          <a href={t("Link.MediumArticle.link")} target="_blank"><b>{t("Link.MediumArticle.name")}</b></a>
+          <Link href="/notes"><b>{t("Link.DetailsPage.name")}</b></Link>
         </div>
       </main>
 
