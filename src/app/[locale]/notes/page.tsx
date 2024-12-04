@@ -127,6 +127,22 @@ export default function Home({params: {locale}}: {
         <Content locale={locale}></Content>
 
       </main>
+      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
+        <Link
+          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
+          href="https://www.saral.me"
+        >
+          <Image
+            aria-hidden
+            src="https://nextjs.org/icons/window.svg"
+            alt="Window icon"
+            width={16}
+            height={16}
+          />
+          {t("Link.developer")}
+        </Link>
+      </footer>
+      
     </div>
   );
 }
