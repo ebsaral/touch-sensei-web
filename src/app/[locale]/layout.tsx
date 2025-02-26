@@ -10,6 +10,11 @@ export function generateStaticParams() {
 }
 
 import "../globals.css";
+import { PrivacyPolicyLink } from "@/components/Links/PrivacyPolicyLink";
+import { TermsLink } from "@/components/Links/TermsLink";
+import { DeveloperLink } from "@/components/Links/DeveloperLink";
+import { LanguageHeader } from "@/components/LanguageHeader";
+import { LogoLink } from "@/components/Links/LogoLink";
 
 const geistSans = localFont({
   src: "../fonts/GeistVF.woff",
@@ -39,7 +44,24 @@ export default async function RootLayout({
       >
       
         <NextIntlClientProvider messages={messages}>
-          {children}
+          <div className="grid grid-rows items-center justify-items-center min-h-screen p-8 pb-20 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+            <main className="flex flex-col gap-8 row-start-2 items-center">
+              <LanguageHeader />
+              <LogoLink />
+              {children}
+            </main>
+          
+            <div className="row-start-3 flex flex-wrap items-center justify-center">
+              <hr className="h-px w-60 my-8 bg-gray-200 border-0" />
+            </div>
+            
+            <footer className="row-start-4 flex gap-6 flex-wrap items-center justify-center">
+              <PrivacyPolicyLink />
+              <TermsLink />
+              <DeveloperLink />
+            </footer>
+            <div className="row-start-5 flex flex-wrap items-center justify-center pt-10">© {new Date().getFullYear()}</div>
+          </div>
           <Analytics />
         </NextIntlClientProvider>
       </body>

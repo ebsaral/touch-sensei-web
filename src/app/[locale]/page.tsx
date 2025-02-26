@@ -4,7 +4,10 @@ import {getTranslations} from 'next-intl/server';
 import { unstable_setRequestLocale } from "next-intl/server";
 import Image from "next/image";
 import {Link} from '@/i18n/routing';
-
+import { LanguageHeader } from "@/components/LanguageHeader";
+import { PrivacyPolicyLink } from "@/components/Links/PrivacyPolicyLink";
+import { TermsLink } from "@/components/Links/TermsLink";
+import { DeveloperLink } from "@/components/Links/DeveloperLink";
 
 
 export async function generateMetadata({params: {locale}}: {
@@ -34,134 +37,43 @@ export default function Home({params: {locale}}: {
   const t = useTranslations();
 
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center">
-        <div className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-          <Image
-              aria-hidden
-              src="https://nextjs.org/icons/globe.svg"
-              alt="Globe icon"
-              width={16}
-              height={16}
-          />
-          <Link
-            className={`flex items-center gap-2 hover:underline hover:underline-offset-4` + `${locale === 'en' && '  font-bold'}`}
-            href="/"
-            locale="en"
-          >
-            English
-          </Link>
-          {" | "}
-          <Link
-            className={`flex items-center gap-2 hover:underline hover:underline-offset-4` + `${locale === 'tr' && '  font-bold'}`}
-            href="/"
-            locale="tr"
-          >
-            Türkçe
-          </Link>
-          {" | "}
-          <Link
-            className={`flex items-center gap-2 hover:underline hover:underline-offset-4` + `${locale === 'de' && '  font-bold'}`}
-            href="/"
-            locale="de"
-          >
-            Deutsch
-          </Link>
-        </div>
-        <Image
-          className="rounded-3xl"
-          src="/images/logo.png"
-          alt="Touch Sensei logo"
-          width={400}
-          height={400}
-          priority
-        />
-        <div className="row-start-3 flex gap-6 text-4xl text-center font-bold font-[family-name:var(--font-geist-mono)] whitespace-pre-line">
-          {'Touch Sensei'}
-        </div>
-        {t("HomePage.soon")}
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center gap-2 h-10 sm:h-12 px-4 sm:px-5"
-            href={t("Link.appStoreHref")}
-            target="_blank"
-          >
-            <Image
-              src={`images/apple-store-${locale}.svg`}
-              alt="App Store logo"
-              width={200}
-              height={100}
-              priority
-            />
-          </a>
-        </div>
-        <br/>
-        <div className="row-start-3 flex gap-6 text-2xl text-center font-bold font-[family-name:var(--font-geist-mono)] whitespace-pre-line">
-          {t('HomePage.gameInfoTitle')}
-        </div>
-        <div className="row-start-3 flex gap-6 text-sm text-center font-[family-name:var(--font-geist-mono)] whitespace-pre-line">
-          {t('HomePage.gameInfo')}
-        </div>
-        <div className="hover:underline hover:underline-offset-4 row-start-3 flex gap-6 text-sm text-left font-[family-name:var(--font-geist-mono)] whitespace-pre-line">
-        <Image
-              src={`images/link.svg`}
-              alt="Link icon"
-              width={16}
-              height={16}
-              priority
-            />
-          <Link href="/notes"><b>{t("Link.DetailsPage.name")}</b></Link>
-        </div>
-      </main>
-
-      <div className="row-start-3 flex flex-wrap items-center justify-center">
-        <hr className="h-px w-60 my-8 bg-gray-200 border-0" />
+    <>
+      <div className="row-start-3 flex gap-6 text-4xl text-center font-bold font-[family-name:var(--font-geist-mono)] whitespace-pre-line">
+        {'Touch Sensei'}
       </div>
-      
-      <footer className="row-start-4 flex gap-6 flex-wrap items-center justify-center">
-        <Link
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="/privacy-policy"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          {t("PrivacyPolicyPage.title")}
-        </Link>
-        <Link
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="/terms"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          {t("TermsPage.title")}
-        </Link>
-        
-        <Link
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://www.saral.me"
+      {t("HomePage.soon")}
+      <div className="flex gap-4 items-center flex-col sm:flex-row">
+        <a
+          className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center gap-2 h-10 sm:h-12 px-4 sm:px-5"
+          href={t("Link.appStoreHref")}
           target="_blank"
         >
           <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
+            src={`images/apple-store-${locale}.svg`}
+            alt="App Store logo"
+            width={200}
+            height={100}
+            priority
+          />
+        </a>
+      </div>
+      <br/>
+      <div className="row-start-3 flex gap-6 text-2xl text-center font-bold font-[family-name:var(--font-geist-mono)] whitespace-pre-line">
+        {t('HomePage.gameInfoTitle')}
+      </div>
+      <div className="row-start-3 flex gap-6 text-sm text-center font-[family-name:var(--font-geist-mono)] whitespace-pre-line">
+        {t('HomePage.gameInfo')}
+      </div>
+      <div className="hover:underline hover:underline-offset-4 row-start-3 flex gap-6 text-sm text-left font-[family-name:var(--font-geist-mono)] whitespace-pre-line">
+      <Image
+            src={`images/link.svg`}
+            alt="Link icon"
             width={16}
             height={16}
+            priority
           />
-          {t("Link.developer")}
-        </Link>
-      </footer>
-      <div className="row-start-5 flex flex-wrap items-center justify-center">© {new Date().getFullYear()}</div>
-    </div>
+        <Link href="/notes"><b>{t("Link.DetailsPage.name")}</b></Link>
+      </div>
+    </>
   );
 }
