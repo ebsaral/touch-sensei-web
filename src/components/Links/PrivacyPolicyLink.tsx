@@ -1,9 +1,8 @@
 import { Link } from "@/i18n/routing";
-import { useLocale, useTranslations } from "next-intl";
-import { GoGlobe } from "react-icons/go";
+import { useTranslations } from "next-intl";
 import { MdOutlinePrivacyTip } from "react-icons/md";
 
-export function PrivacyPolicyLink({page}: {page?: string}) {
+export function PrivacyPolicyLink() {
     const t = useTranslations()
     return <Link
         className="flex items-center gap-2 hover:underline hover:underline-offset-4"

@@ -4,10 +4,6 @@ import {getTranslations} from 'next-intl/server';
 import { unstable_setRequestLocale } from "next-intl/server";
 import Image from "next/image";
 import {Link} from '@/i18n/routing';
-import { LanguageHeader } from "@/components/LanguageHeader";
-import { PrivacyPolicyLink } from "@/components/Links/PrivacyPolicyLink";
-import { TermsLink } from "@/components/Links/TermsLink";
-import { DeveloperLink } from "@/components/Links/DeveloperLink";
 
 
 export async function generateMetadata({params: {locale}}: {

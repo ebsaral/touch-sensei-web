@@ -2,7 +2,7 @@ import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 import { MdDeveloperMode } from "react-icons/md";
 
-export function DeveloperLink({page}: {page?: string}) {
+export function DeveloperLink() {
     const t = useTranslations()
     return <Link
         className="flex items-center gap-2 hover:underline hover:underline-offset-4"

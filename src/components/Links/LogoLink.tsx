@@ -7,7 +7,7 @@ export function LogoLink(){
     return (
         <Link
             href="/"
-            locale={locale as any}
+            locale={locale as "en" | "tr" | "de"}
         >
             <Image
                 className="rounded-3xl"
