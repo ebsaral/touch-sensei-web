@@ -6,7 +6,7 @@ export function DeveloperLink() {
     const t = useTranslations()
     return <Link
         className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-        href="https://www.saral.me"
+        href="https://ebsaral.vercel.app"
         target="_blank"
     >
         <MdDeveloperMode />

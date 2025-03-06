@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/private/',
     },
-    sitemap: 'https://touch-sensei.saral.me/sitemap.xml',
+    sitemap: 'https://touch-sensei-web.vercel.app/sitemap.xml',
   }
 }

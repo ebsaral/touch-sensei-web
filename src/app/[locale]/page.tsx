@@ -19,7 +19,7 @@ export async function generateMetadata({params: {locale}}: {
     },
     appLinks: {
       ios: {
-        url: 'https://touch-sensei.saral.me',
+        url: 'https://touch-sensei-web.vercel.app',
         app_store_id: '6705136310'
       },
     }

@@ -4,22 +4,22 @@ import type { MetadataRoute } from 'next'
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: 'https://touch-sensei.saral.me',
+      url: 'https://touch-sensei-web.vercel.app',
       lastModified: new Date(),
       alternates: {
         languages: {
-          tr: 'https://touch-sensei.saral.me/tr',
-          de: 'https://touch-sensei.saral.me/de'
+          tr: 'https://touch-sensei-web.vercel.app/tr',
+          de: 'https://touch-sensei-web.vercel.app/de'
         },
       },
     },
     {
-      url: 'https://touch-sensei.saral.me/en/notes',
+      url: 'https://touch-sensei-web.vercel.app/en/notes',
       lastModified: new Date(),
       alternates: {
         languages: {
-          tr: 'https://touch-sensei.saral.me/tr/notes',
-          de: 'https://touch-sensei.saral.me/de/notes'
+          tr: 'https://touch-sensei-web.vercel.app/tr/notes',
+          de: 'https://touch-sensei-web.vercel.app/de/notes'
         },
       },
     }
