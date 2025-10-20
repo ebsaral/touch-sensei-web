@@ -31,6 +31,7 @@
         "appStoreHref": "https://apps.apple.com/de/app/touch-sensei/id6705136310",
         "DetailsPage": {
             "name": "Ein Erklärungstext vom Entwickler (Auf Englisch)"
-        } 
+        },
+        "expired": "Da die Apple-Entwicklerlizenz abgelaufen ist, ist das Spiel derzeit nicht im App Store aufgeführt."
     }
 }
