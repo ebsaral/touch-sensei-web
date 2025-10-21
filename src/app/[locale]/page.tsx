@@ -54,10 +54,10 @@ export default function Home({params: {locale}}: {
         </a>
       </div>
       <br/>
-      <div className="row-start-3 flex gap-6 text-2xl text-center font-bold font-[family-name:var(--font-geist-mono)] whitespace-pre-line">
+      <div className="row-start-3 flex gap-6 text-2xl font-bold font-[family-name:var(--font-geist-mono)] whitespace-pre-line">
         {t('HomePage.gameInfoTitle')}
       </div>
-      <div className="row-start-3 flex gap-6 text-sm text-center font-[family-name:var(--font-geist-mono)] whitespace-pre-line">
+      <div className="row-start-3 flex gap-6 text-sm text-left font-[family-name:var(--font-geist-mono)] whitespace-pre-line">
         {t('HomePage.gameInfo')}
       </div>
       <div className="hover:underline hover:underline-offset-4 row-start-3 flex gap-6 text-sm text-left font-[family-name:var(--font-geist-mono)] whitespace-pre-line">
