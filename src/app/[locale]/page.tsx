@@ -4,6 +4,8 @@ import {getTranslations} from 'next-intl/server';
 import { unstable_setRequestLocale } from "next-intl/server";
 import Image from "next/image";
 import {Link} from '@/i18n/routing';
+import { MdNoteAlt } from "react-icons/md";
+
 
 
 export async function generateMetadata({params: {locale}}: {
@@ -60,14 +62,8 @@ export default function Home({params: {locale}}: {
       <div className="row-start-3 flex gap-6 text-sm text-left font-[family-name:var(--font-geist-mono)] whitespace-pre-line">
         {t('HomePage.gameInfo')}
       </div>
-      <div className="hover:underline hover:underline-offset-4 row-start-3 flex gap-6 text-sm text-left font-[family-name:var(--font-geist-mono)] whitespace-pre-line">
-      <Image
-            src={`images/link.svg`}
-            alt="Link icon"
-            width={16}
-            height={16}
-            priority
-          />
+      <div className="hover:underline hover:underline-offset-4 row-start-3 flex gap-2 text-sm text-left items-center font-[family-name:var(--font-geist-mono)] whitespace-pre-line">
+        <MdNoteAlt size={16} />
         <Link href="/notes"><b>{t("Link.DetailsPage.name")}</b></Link>
       </div>
     </>
