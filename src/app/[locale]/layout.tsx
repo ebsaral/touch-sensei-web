@@ -1,20 +1,12 @@
 import { Analytics } from "@vercel/analytics/react"
-import localFont from "next/font/local";
-import {NextIntlClientProvider} from 'next-intl';
-import {getMessages} from 'next-intl/server';
-import {routing} from '@/i18n/routing';
-import {unstable_setRequestLocale} from 'next-intl/server';
 
-export function generateStaticParams() {
-  return routing.locales.map((locale) => ({locale}));
-}
+import { LocalPromiseParams, type NextLayoutIntlayer, generateStaticParams } from "next-intlayer";
+import { getHTMLTextDir, getIntlayer, getMultilingualUrls } from "intlayer";
+
+import localFont from "next/font/local";
 
 import "../globals.css";
-import { PrivacyPolicyLink } from "@/components/Links/PrivacyPolicyLink";
-import { TermsLink } from "@/components/Links/TermsLink";
-import { DeveloperLink } from "@/components/Links/DeveloperLink";
-import { LanguageHeader } from "@/components/LanguageHeader";
-import { LogoLink } from "@/components/Links/LogoLink";
+import { Metadata } from "next";
 
 const geistSans = localFont({
   src: "../fonts/GeistVF.woff",
@@ -28,43 +20,61 @@ const geistMono = localFont({
 });
 
 
-export default async function RootLayout({
-  children,
-  params: {locale}
-}: {
-  children: React.ReactNode;
-  params: {locale: string};
-}) {
-  unstable_setRequestLocale(locale);
-  const messages = await getMessages();
+export { generateStaticParams };
+
+export const generateMetadata = async ({
+  params,
+}: LocalPromiseParams): Promise<Metadata> => {
+  const { locale } = await params;
+
+  const metadata = getIntlayer("page-metadata", locale);
+
+  /**
+   * Generates an object containing all url for each locale.
+   *
+   * Example:
+   * ```ts
+   *  getMultilingualUrls('/about');
+   *
+   *  // Returns
+   *  // {
+   *  //   en: '/about',
+   *  //   fr: '/fr/about',
+   *  //   es: '/es/about',
+   *  // }
+   * ```
+   */
+  
+  const url = "https://touch-sensei-web.vercel.app";
+  const multilingualUrls = getMultilingualUrls(url);
+
+  return {
+    ...metadata,
+    alternates: {
+      canonical: multilingualUrls[locale as keyof typeof multilingualUrls],
+      languages: { ...multilingualUrls, "x-default": url },
+    },
+    openGraph: {
+      ...metadata.openGraph,
+      url: multilingualUrls[locale as keyof typeof multilingualUrls],
+    },
+  };
+};
+
+const LocaleLayout: NextLayoutIntlayer = async ({ children, params }) => {
+  const { locale } = await params;
   return (
-    <html lang={locale}>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-      
-        <NextIntlClientProvider messages={messages}>
-          <div className="grid grid-rows items-center justify-items-center min-h-screen p-8 pb-20 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-            <main className="flex flex-col gap-8 row-start-2 items-center">
-              <LanguageHeader />
-              <LogoLink />
-              {children}
-            </main>
-          
-            <div className="row-start-3 flex flex-wrap items-center justify-center">
-              <hr className="h-px w-60 my-8 bg-gray-200 border-0" />
-            </div>
-            
-            <footer className="row-start-4 flex gap-6 flex-wrap items-center justify-center">
-              <PrivacyPolicyLink />
-              <TermsLink />
-              <DeveloperLink />
-            </footer>
-            <div className="row-start-5 flex flex-wrap items-center justify-center pt-10">© {new Date().getFullYear()}</div>
-          </div>
-          <Analytics />
-        </NextIntlClientProvider>
+    <html lang={locale} dir={getHTMLTextDir(locale)} className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+    >
+      <head>
+        <meta name="robots" content="all" />
+      </head>
+      <body>
+        {children}
+        <Analytics />
       </body>
     </html>
   );
-}
+};
+
+export default LocaleLayout;

@@ -1,6 +1,6 @@
-import {useTranslations} from 'next-intl';
+import { getIntlayer } from 'intlayer';
  
 export default function NotFoundPage() {
-  const t = useTranslations('NotFoundPage');
-  return <h1>{t('title')}</h1>;
+  const content = getIntlayer("main-page");
+  return <h1>{content.notFound}</h1>;
 }

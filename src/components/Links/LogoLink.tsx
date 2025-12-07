@@ -1,13 +1,12 @@
+import { useLocale } from "next-intlayer/server"
 import Image from "next/image"
-import { Link } from "@/i18n/routing";
-import { useLocale } from "next-intl";
+import Link from "./LocalizedLink"
 
 export function LogoLink(){
     const locale = useLocale()
     return (
         <Link
             href="/"
-            locale={locale as "en" | "tr" | "de"}
         >
             <Image
                 className="rounded-3xl"

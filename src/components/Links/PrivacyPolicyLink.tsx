@@ -1,14 +1,15 @@
-import { Link } from "@/i18n/routing";
-import { useTranslations } from "next-intl";
+
 import { MdOutlinePrivacyTip } from "react-icons/md";
+import Link from "./LocalizedLink";
+import { useIntlayer } from "next-intlayer/server";
 
 export function PrivacyPolicyLink() {
-    const t = useTranslations()
+    const content = useIntlayer("privacy-page")
     return <Link
         className="flex items-center gap-2 hover:underline hover:underline-offset-4"
         href="/privacy-policy"
     >
         <MdOutlinePrivacyTip />
-        {t("PrivacyPolicyPage.title")}
+        {content.title}
     </Link>
 }

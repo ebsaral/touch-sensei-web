@@ -1,37 +1,34 @@
 "use client"
-import { Link, usePathname } from "@/i18n/routing";
-import { useLocale } from "next-intl";
+
+import {
+  getLocaleName,
+  getLocalizedUrl,
+} from "intlayer";
+
+import { useIntlayer, useLocale, useLocaleCookie } from "next-intlayer";
+import Link from "next/link";
 import { GoGlobe } from "react-icons/go";
 
-export function LanguageHeader() {
-    const locale = useLocale()
-    const pathname = usePathname()
-    const href = pathname.replace(`/${locale}`, "") || "/"
-
+export function LanguageHeader({targetId=""} :{className?: string, targetId?: string}) {
+    const { locale, pathWithoutLocale, availableLocales } = useLocale();
+    const content = useIntlayer("main-page");
+    const { setLocaleCookie } = useLocaleCookie();
     return <div className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <GoGlobe />
-        <Link
-        className={`flex items-center gap-2 hover:underline hover:underline-offset-4` + `${locale === 'en' && '  font-bold'}`}
-        href={href}
-        locale="en"
-        >
-        English
-        </Link>
-        {" | "}
-        <Link
-        className={`flex items-center gap-2 hover:underline hover:underline-offset-4` + `${locale === 'tr' && '  font-bold'}`}
-        href={href}
-        locale="tr"
-        >
-        Türkçe
-        </Link>
-        {" | "}
-        <Link
-        className={`flex items-center gap-2 hover:underline hover:underline-offset-4` + `${locale === 'de' && '  font-bold'}`}
-        href={href}
-        locale="de"
-        >
-        Deutsch
-        </Link>
+      <GoGlobe />
+      {availableLocales.map((localeItem) => (
+        <div key={localeItem} className="flex flex-row items-center justify-center gap-2">
+          <p>{content.flags[localeItem]}</p>
+          <Link
+            className={`flex items-center gap-2 hover:underline hover:underline-offset-4` + `${locale === localeItem && ' font-bold'}`}
+            href={getLocalizedUrl(pathWithoutLocale, localeItem)}
+            hrefLang={localeItem}
+            aria-current={locale === localeItem ? "page" : undefined}
+            onClick={() => setLocaleCookie(localeItem)}
+            itemID={targetId}
+          >
+              {getLocaleName(localeItem)}
+          </Link>
+        </div>
+        ))}
     </div>
 }

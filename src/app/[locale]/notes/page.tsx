@@ -1,16 +1,18 @@
-import {getTranslations} from 'next-intl/server';
-import { unstable_setRequestLocale } from "next-intl/server";
 
+import InnerLayout from "@/components/InnerLayout";
+import { GoogleSupportForm } from "@/components/Links/GoogleSupportForm";
+import { getPageMetadata } from "@/utils";
+import { getIntlayer } from "intlayer";
+import { Metadata } from "next";
+import { LocalPromiseParams, NextPageIntlayer } from "next-intlayer";
+import { InnerLayout as InnerLayoutType } from "@/components/types";
 
-export async function generateMetadata({params: {locale}}: {
-  params: {locale: string};
-}) {
-  const t = await getTranslations({locale, namespace: 'Metadata'});
- 
-  return {
-    title: t('title')
-  };
-}
+export const generateMetadata = async ({
+  params,
+}: LocalPromiseParams): Promise<Metadata> => {
+  const { locale } = await params;
+  return getPageMetadata({locale})
+};
 
 function Content({ locale }: {locale: string}) {
     if (locale == "tr") {
@@ -51,14 +53,22 @@ function Content({ locale }: {locale: string}) {
     }
 
     return <></>;
+}
+
+const Page: NextPageIntlayer = async ({ params }) => {
+  const { locale } = await params;
+  const intlayerKey = "notes-page";
+
+  const layoutParams: InnerLayoutType = {
+    intlayerKey,
+    locale,
   }
 
-export default function Home({params: {locale}}: {
-  params: {locale: string};
-}) {
-  unstable_setRequestLocale(locale);
-
   return (
-    <Content locale={locale}></Content>
+    <InnerLayout params={layoutParams}>
+      <Content locale={locale}></Content>
+    </InnerLayout>
   );
 }
+
+export default Page;

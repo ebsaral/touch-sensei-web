@@ -1,8 +1,5 @@
 # The website of Touch Sensei mobile game.
 
-Simple showcase of a React web application. 
-
-Some examples in this project:
 - Internationalization, localization
 - Encapsulation
 - Route handling
