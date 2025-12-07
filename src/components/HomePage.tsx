@@ -1,7 +1,9 @@
 import { useIntlayer, useLocale } from "next-intlayer/server";
+
 import Image from "next/image";
 import { MdNoteAlt } from "react-icons/md";
 import Link from "./Links/LocalizedLink";
+import Video from "./Video";
 
 const HomePageContent = () => {
   const content = useIntlayer("main-page"); 
@@ -29,10 +31,7 @@ const HomePageContent = () => {
           />
         </a>
       </div>
-      <br/>
-      <div className="row-start-3 flex gap-6 text-2xl font-bold font-[family-name:var(--font-geist-mono)] whitespace-pre-line">
-        {content.gameInfoTitle}
-      </div>
+      <Video />
       <div className="row-start-3 flex gap-6 text-sm text-left font-[family-name:var(--font-geist-mono)] whitespace-pre-line">
         {content.gameInfo}
       </div>

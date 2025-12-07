@@ -6,6 +6,8 @@ import { getHTMLTextDir, getIntlayer, getMultilingualUrls } from "intlayer";
 import localFont from "next/font/local";
 
 import "../globals.css";
+import "../video-react.css";
+
 import { Metadata } from "next";
 
 const geistSans = localFont({
