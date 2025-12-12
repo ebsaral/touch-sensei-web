@@ -12,7 +12,7 @@
   "dependencies": {
     "@vercel/analytics": "^1.3.1",
     "intlayer": "^7.3.9",
-    "next": "^16.0.7",
+    "next": "^16.0.10",
     "next-intlayer": "^7.3.9",
     "react": "^19.2.1",
     "react-dom": "^19.2.1",
